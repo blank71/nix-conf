@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./i18n-ja.nix
+      ./font.nix
+      ./user-bl.nix
     ];
 
   # Bootloader.
@@ -33,49 +36,6 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = [pkgs.fcitx5-mozc];
-  };
-
-  # font
-  fonts = {
-    fonts = with pkgs; [
-      fira-code
-      hackgen-font
-      noto-fonts-cjk-serif
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      nerdfonts
-      ibm-plex
-      ipaexfont
-    ];
-    fontDir.enable = true;
-    fontconfig = {
-      defaultFonts = {
-        serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
-        sansSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
-        monospace = ["HackGen Console" "JetBrainsMono Nerd Font" "Noto Color Emoji"];
-        emoji = ["Noto Color Emoji"];
-      };
-    };
-   };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -118,26 +78,6 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   nixpkgs.config.allowUnfree = true;
-  users.users.bl = {
-    isNormalUser = true;
-    description = "bl";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      discord
-      firefox
-      gnome-extension-manager
-      gnome.pomodoro
-      gnomeExtensions.just-perfection
-      google-chrome
-      google-drive-ocamlfuse
-      opam
-      remmina
-      slack
-      vscode
-      wezterm
-      zoom-us
-    ];
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
