@@ -7,7 +7,6 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
       ./i18n-ja.nix
       ./font.nix
       ./user-bl.nix
