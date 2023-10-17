@@ -7,7 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./i18n-ja.nix
+      #./i18n-ja.nix
+      ./i18n-en.nix
       ./font.nix
       ./user-bl.nix
     ];
@@ -45,12 +46,14 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "jp";
+    #layout = "jp";
+    layout = "us";
     xkbVariant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "jp106";
+  #console.keyMap = "jp106";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

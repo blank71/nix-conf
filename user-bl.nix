@@ -10,6 +10,7 @@
       firefox
       gnome-extension-manager
       gnome.pomodoro
+      gnome.gnome-tweaks
       gnomeExtensions.just-perfection
       google-chrome
       google-drive-ocamlfuse
