@@ -11,6 +11,7 @@
       noto-fonts-emoji
       nerdfonts
       ibm-plex
+      ipafont
       ipaexfont
     ];
     fontDir.enable = true;

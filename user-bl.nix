@@ -13,6 +13,7 @@
       gnomeExtensions.just-perfection
       google-chrome
       google-drive-ocamlfuse
+      #mattermost-desktop
       opam
       remmina
       slack
