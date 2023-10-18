@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # font
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       fira-code
       hackgen-font
       noto-fonts-cjk-serif

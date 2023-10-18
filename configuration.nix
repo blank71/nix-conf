@@ -2,18 +2,25 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ 
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       #./i18n-ja.nix
+      ./hardware-configuration.nix
       ./i18n-en.nix
-      ./font.nix
+      ./fonts.nix
       ./user-bl.nix
+      ./xremap.nix
     ];
 
-  # Bootloader.
+  # Boot3loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
