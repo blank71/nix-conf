@@ -8,11 +8,18 @@
     userName = "bl";
     serviceMode = "system";
     config = {
-      modmap = [
+      keymap = [
         {
-          name = "CapsLock is dead";
+          name = "Eisu";
           remap = {
+            Shift-CapsLock = "HENKAN";
             CapsLock = "HENKAN";
+            M-Grave = "HENKAN";
+          }; 
+          application = {
+            not = [
+                "remmina"
+            ];
           };
         }
       ];
