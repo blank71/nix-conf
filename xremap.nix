@@ -10,7 +10,7 @@
     config = {
       keymap = [
         {
-          name = "Eisu";
+          name = "HENKAN";
           remap = {
             Shift-CapsLock = "HENKAN";
             CapsLock = "HENKAN";
@@ -20,6 +20,13 @@
             not = [
                 "remmina"
             ];
+          };
+        }
+        {
+          name = "Alt";
+          remap = {
+            Alt-Minus = "Alt-Left";
+            Alt-Equal = "Alt-Right";
           };
         }
       ];
