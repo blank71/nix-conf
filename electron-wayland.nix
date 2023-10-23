@@ -14,8 +14,12 @@ in
 super:
   {
     slack = enableWayland super.slack "slack";
-    discord = enableWayland super.discord "discord";
-    vscode = enableWayland super.vscode "code";
+    #cdiscord = enableWayland super.discord "discord";
+    vscode = ( 
+      super.vscode.override {
+        commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+      }
+    );
     google-chrome = (
       super.google-chrome.override {
         commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";

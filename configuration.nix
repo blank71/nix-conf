@@ -13,12 +13,17 @@
   imports =
     [ # Include the results of the hardware scan.
       #./i18n-ja.nix
+      # ./electron-wayland.nix
       ./hardware-configuration.nix
       ./i18n-en.nix
       ./fonts.nix
       ./user-bl.nix
       ./xremap.nix
     ];
+  nixpkgs.overlays = [
+    (import ./electron-wayland.nix)
+  ];
+
 
   # Boot3loader.
   boot.loader.systemd-boot.enable = true;
@@ -52,7 +57,16 @@
     gdm.enable = true;
     gdm.wayland = true;
   };
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome = {
+    enable = true;
+    extraGSettingsOverrides = ''
+      [org.gnome.mutter]
+      experimental-features=['scale-monitor-framebuffer']
+    '';
+  };
+
+  # fingerprint
+  services.fprintd.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -94,15 +108,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     fprintd
      gcc
      git
      go
      gnumake
      linuxKernel.packages.linux_6_1.vmware
      neovim
+     unzip
      vim
      vmware-workstation
      wget
+     zip
  ];
 
   # Some programs need SUID wrappers, can be configured further or are

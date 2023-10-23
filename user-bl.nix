@@ -13,6 +13,7 @@
       gnome.gnome-tweaks
       #gnomeExtensions.gtk-title-bar
       gnomeExtensions.just-perfection
+      gnomeExtensions.keyman
       google-chrome
       google-drive-ocamlfuse
       #mattermost-desktop
