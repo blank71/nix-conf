@@ -15,6 +15,11 @@ super:
   {
     slack = enableWayland super.slack "slack";
     #cdiscord = enableWayland super.discord "discord";
+    drawio = (
+      super.drawio.override {
+        commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+      }
+    );
     vscode = ( 
       super.vscode.override {
         commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
