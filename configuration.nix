@@ -21,7 +21,7 @@
       ./xremap.nix
     ];
   nixpkgs.overlays = [
-    (import ./electron-wayland.nix)
+    # (import ./electron-wayland.nix)
   ];
 
 
@@ -51,17 +51,25 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  # services.xserver.dpi = 400;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager = {
+    # defaultSession = "none+i3";
+    defaultSession = "gnome";
     gdm.enable = true;
     gdm.wayland = true;
+  };
+  services.xserver.windowManager.i3 = {
+    enable = true;
   };
   services.xserver.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''
       [org.gnome.mutter]
       experimental-features=['scale-monitor-framebuffer']
+      [org.gnome.desktop.interface]
+      scaling-factor=2
     '';
   };
 
@@ -108,18 +116,21 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     fprintd
-     gcc
-     git
-     go
-     gnumake
-     linuxKernel.packages.linux_6_1.vmware
-     neovim
-     unzip
-     vim
-     vmware-workstation
-     wget
-     zip
+    fprintd
+    gcc
+    git
+    go
+    gnome.gnome-keyring
+    gnumake
+    i3
+    i3lock
+    linuxKernel.packages.linux_6_1.vmware
+    neovim
+    unzip
+    vim
+    vmware-workstation
+    wget
+    zip
  ];
 
   # Some programs need SUID wrappers, can be configured further or are

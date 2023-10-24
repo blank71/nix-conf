@@ -7,6 +7,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       discord
+      drawio
       firefox
       gnome-extension-manager
       gnome.pomodoro
