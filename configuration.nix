@@ -127,6 +127,7 @@
     linuxKernel.packages.linux_6_1.vmware
     neovim
     unzip
+    trash-cli
     vim
     vmware-workstation
     wget
