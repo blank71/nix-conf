@@ -24,7 +24,6 @@
     # (import ./electron-wayland.nix)
   ];
 
-
   # Boot3loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -49,12 +48,17 @@
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
+  # video 
+  # hardware.opengl.driSupport = true;
+  # hardware.opengl.driSupport32Bit = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.dpi = 400;
   environment.variables = {
     GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.5";
+    # GDK_DPI_SCALE = "0.5";
+    QT_SCALE_FACTOR = "2";
   };
 
 
@@ -135,9 +139,18 @@
     trash-cli
     vim
     vmware-workstation
+    vscode
     wget
     zip
  ];
+
+  # vmware
+  virtualisation.vmware.host.enable = true;
+
+  # vscode under wayland
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
