@@ -51,7 +51,12 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  # services.xserver.dpi = 400;
+  services.xserver.dpi = 400;
+  environment.variables = {
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE = "0.5";
+  };
+
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager = {
@@ -68,9 +73,9 @@
     extraGSettingsOverrides = ''
       [org.gnome.mutter]
       experimental-features=['scale-monitor-framebuffer']
-      [org.gnome.desktop.interface]
-      scaling-factor=2
     '';
+    # [org.gnome.desktop.interface]
+    # scaling-factor=2
   };
 
   # fingerprint
