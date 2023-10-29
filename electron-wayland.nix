@@ -13,18 +13,18 @@ let
 in
 super:
   {
-    slack = enableWayland super.slack "slack";
-    #cdiscord = enableWayland super.discord "discord";
-    drawio = (
-      super.drawio.override {
-        commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-      }
-    );
-    vscode = ( 
-      super.vscode.override {
-        commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-      }
-    );
+    # slack = enableWayland super.slack "slack";
+    # discord = enableWayland super.discord "discord";
+    # drawio = (
+    #   super.drawio.override {
+    #     commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    #   }
+    # );
+    # vscode = ( 
+    #   super.vscode.override {
+    #     commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    #   }
+    # );
     google-chrome = (
       super.google-chrome.override {
         commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";

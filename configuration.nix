@@ -56,9 +56,13 @@
   services.xserver.enable = true;
   services.xserver.dpi = 400;
   environment.variables = {
-    # GDK_SCALE = "2";
-    # GDK_DPI_SCALE = "0.5";
-    # QT_SCALE_FACTOR = "2";
+    GDK_SCALE = "1";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "0";
+    QT_SCALE_FACTOR = "1";
+    XMODIFIERS="@im=fcitx";
   };
 
 
@@ -147,9 +151,9 @@
   # vmware
   virtualisation.vmware.host.enable = true;
 
-  # vscode under wayland
+  # wayland
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
+    # NIXOS_OZONE_WL = "1";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
