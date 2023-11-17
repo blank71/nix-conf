@@ -96,6 +96,13 @@
     xkbVariant = "";
   };
 
+  # xrdp
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "gnome";
+    port = 13389;
+  };
+
   # Configure console keymap
   #console.keyMap = "jp106";
   console.keyMap = "us";
@@ -129,6 +136,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    cloudflared
     fprintd
     gcc
     git
@@ -140,6 +148,7 @@
     linuxKernel.packages.linux_6_1.vmware
     neovim
     unzip
+    # remmina
     trash-cli
     vim
     vmware-workstation
@@ -182,5 +191,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
+  system.autoUpgrade.enable  = true;
+  system.autoUpgrade.allowReboot  = false;
 }

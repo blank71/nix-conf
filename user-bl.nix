@@ -23,6 +23,8 @@
       remmina
       slack
       # steam
+      teams-for-linux
+      # teams
       # vscode
       wezterm
       zoom-us
