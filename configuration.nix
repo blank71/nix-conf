@@ -147,6 +147,7 @@
     i3lock
     linuxKernel.packages.linux_6_1.vmware
     neovim
+    opam
     unzip
     # remmina
     trash-cli

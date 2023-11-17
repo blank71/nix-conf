@@ -18,7 +18,6 @@
       google-chrome
       google-drive-ocamlfuse
       #mattermost-desktop
-      opam
       pstree
       remmina
       slack
