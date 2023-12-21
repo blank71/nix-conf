@@ -15,6 +15,9 @@
       #gnomeExtensions.gtk-title-bar
       gnomeExtensions.just-perfection
       gnomeExtensions.keyman
+      gnomeExtensions.kimpanel
+      gnomeExtensions.resource-monitor
+      gnomeExtensions.runcat
       google-chrome
       google-drive-ocamlfuse
       #mattermost-desktop

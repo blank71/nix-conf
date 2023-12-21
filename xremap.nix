@@ -29,6 +29,13 @@
             Alt-Equal = "Alt-Right";
           };
         }
+        {
+          name = "move workspace";
+          remap = {
+            Super-J = "Super-PageUp";
+            Super-K = "Super-PageDown";
+          };
+        }
       ];
     };
   };

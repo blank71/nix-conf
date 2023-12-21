@@ -76,6 +76,9 @@
   services.xserver.windowManager.i3 = {
     enable = true;
   };
+  programs.hyprland = {
+    enable = true;
+  };
   services.xserver.desktopManager.gnome = {
     enable = true;
     extraGSettingsOverrides = ''
@@ -88,6 +91,7 @@
 
   # fingerprint
   services.fprintd.enable = true;
+  services.fwupd.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
